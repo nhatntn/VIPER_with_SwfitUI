@@ -1,0 +1,25 @@
+import SwiftUI
+
+struct ContentView: View {
+  @EnvironmentObject var model: DataModel
+
+  var body: some View {
+    NavigationView {
+      VStack(spacing: 32) {
+        Text("Welcome to Visually Interesting Planned Easy Roadtrips (VIPER).")
+        Text("Just follow along in the tutorial.")
+        Text("Your trip awaits...")
+      }
+    }
+  }
+}
+
+#if DEBUG
+struct ContentView_Previews: PreviewProvider {
+  static var previews: some View {
+    let model = DataModel.sample
+    return ContentView()
+      .environmentObject(model)
+  }
+}
+#endif
